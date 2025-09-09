@@ -1,0 +1,150 @@
+  <!-- Loading Screen -->
+  <div id="loader" class="loader-overlay">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <div class="loader-text">Loading, please wait...</div>
+    </div>
+  </div>
+  <!-- Price Modal -->
+  <div id="priceModal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">&times;</button>
+  <form id="priceForm" class="modal-form">
+        <h2>Get Service Price</h2>
+        <div class="form-group">
+          <label for="modalName">Name<span>*</span></label>
+          <input type="text" id="modalName" name="modalName" required placeholder="Your Name">
+        </div>
+        <div class="form-group">
+          <label for="modalPhone">Mobile Number<span>*</span></label>
+          <input type="tel" id="modalPhone" name="modalPhone" required pattern="[0-9]{10,}" placeholder="Your Mobile Number">
+        </div>
+        <div class="form-group">
+          <label for="modalService">Service<span>*</span></label>
+          <textarea id="modalService" name="modalService" rows="2" required placeholder="Service"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+  </form>
+  <div id="modalSuccess" class="modal-success" style="display:none;">We will contact you very soon</div>
+      </form>
+    </div>
+  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Bridal Makeup & Hair</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <nav class="navbar">
+    <div class="navbar-container">
+     <a href="index.html"> <div class="navbar-logo">
+         <img src="aastha logo final (2).png" alt="logo">
+      </div></a>
+      <div class="navbar-hamburger" id="navbar-hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="navbar-menu" id="navbar-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+         <li><a href="#about">About</a></li>
+         <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#gallery">Contact Us</a></li>
+        <li><a href="#join">Join Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+    <section id="home" class="banner">
+    <h1>Indian Bridal <br> Makeup & Hair</h1>
+    <div class="artist">
+      <p>By Makeup Artist Aastha Kumari</p>
+    </div>
+    <button class="appointment-btn" onclick="showContact()">Book an appointment !</button>
+    <div class="contact-info" id="contactInfo" style="display:none; margin-top:1rem;">
+      <p><strong>📞 Call:</strong> <a href="tel:7667798012">7667798012</a>, <a href="tel:8797537533">8797537533</a></p>
+      <p>
+        <a class="whatsapp-link" href="https://wa.me/917667798012" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+            class="whatsapp-icon" />
+          <span>7667798012</span>
+        </a>
+      </p>
+    </div>
+  </section>
+
+
+  <section class="waxing-types-section">
+    <h2>Types of Body Waxing</h2>
+    <div class="waxing-cards">
+      <div class="waxing-card">
+        <img src="full-body-wax.jpg.webp" alt="Full Body Waxing">
+        <h3>Full Body</h3>
+        <button class="get-price-btn">Get Price</button>
+      </div>
+      <div class="waxing-card">
+        <img src="full body waxing.png" alt="Half Legs Waxing">
+        <h3>Half Legs</h3>
+        <button class="get-price-btn">Get Price</button>
+      </div>
+      <div class="waxing-card">
+        <img src="under arms.jpg" alt="Under Arms Waxing">
+        <h3>Under Arms</h3>
+        <button class="get-price-btn">Get Price</button>
+      </div>
+      <div class="waxing-card">
+        <img src="Bikini-wax.jpg" alt="Bikni Waxing">
+        <h3>Bikni</h3>
+        <button class="get-price-btn">Get Price</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="choose-services">
+    <h2>Choose Your<br>Services..</h2>
+    <div class="service-cards">
+      <a class="service-card" href="eyebrow.html">
+        <img src="Threading-Facial-Hair.jpg" alt="Eyebrow threading">
+        <span>Eyebrow Threading</span>
+      </a>
+      <a class="service-card" href="mackeup.html">
+        <img src="meckup.jpg" alt="Eyebrow threading">
+        <span>Makeup</span>
+      </a>
+
+      <a class="service-card" href="sceen.html">
+        <img src="sceen care.jpg" alt="Skin care">
+        <span>Skin Care</span>
+      </a>
+  
+      <a class="service-card" href="hairstyle.html">
+        <img src="hair-styling.jpg" alt="Hairstyling">
+        <span>Hairstyling</span>
+      </a>
+      <a class="service-card" href="nail.html">
+        <img src="nail-extension.jpg" alt="Hairstyling">
+        <span>Nail Extension</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+    <footer>
+    <p>📍 The Evolvers Library,Saidpur Street no-2,Bhikhana Pahadi More, Pin-800004</p>
+    <p>📞 Contact: 7667798012 | 8797537533</p>
+    <p>
+      <a href="https://www.facebook.com/share/1HEschiM1E/?mibextid=wwXIfr">Facebook</a> |
+      <a href="https://www.instagram.com/aasthakumari04?igsh=MW04OTlnNjc1NjIyZA%3D%3D&utm_source=qr">Instagram</a> |
+      <a href="https://api.whatsapp.com/send/?phone=917667798012&text&type=phone_number&app_absent=0">WhatsApp</a>
+    </p>
+    <p>&copy; 2025 Indian Bridal Makeup & Hair. All Rights Reserved.</p>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
