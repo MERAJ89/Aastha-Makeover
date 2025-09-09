@@ -1,3 +1,17 @@
+/* Stylish Banner h1 Font */
+.banner h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #fff0f6;
+  text-shadow: 0 2px 12px rgba(180,123,72,0.08);
+}
+@media (max-width: 600px) {
+  .banner h1 {
+    font-size: 2rem;
+  }
+}
 /* Loading Screen Styles */
 .loader-overlay {
   position: fixed;
