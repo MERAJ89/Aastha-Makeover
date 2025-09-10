@@ -146,6 +146,34 @@
     <p>&copy; 2025 Indian Bridal Makeup & Hair. All Rights Reserved.</p>
   </footer>
 
+    <script>
+    document.getElementById('priceForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      fetch('https://sheetdb.io/api/v1/d2wso3a42dnwt', {
+        method: 'POST',
+        body: JSON.stringify({
+          data: {
+            name: document.getElementById('modalName').value,
+            phone: document.getElementById('modalPhone').value,
+            service: document.getElementById('modalService').value,
+            timestamp: new Date().toLocaleString(),
+          }
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('priceForm').style.display = 'none';
+          document.getElementById('modalSuccess').style.display = 'block';
+        })
+        .catch(err => alert('❌ There was an error: ' + err));
+    });
+
+  </script>
+
 
   <script src="script.js"></script>
 </body>

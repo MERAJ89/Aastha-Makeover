@@ -1,35 +1,36 @@
-  <!-- Loading Screen -->
-  <div id="loader" class="loader-overlay">
-    <div class="loader-content">
-      <div class="loader-spinner"></div>
-      <div class="loader-text">Loading, please wait...</div>
-    </div>
+<!-- Loading Screen -->
+<div id="loader" class="loader-overlay">
+  <div class="loader-content">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">Loading, please wait...</div>
   </div>
+</div>
 
-  <!-- Price Modal -->
-  <div id="priceModal" class="modal-overlay">
-    <div class="modal-content">
-      <button class="modal-close" id="closeModal">&times;</button>
-  <form id="priceForm" class="modal-form">
-        <h2>Get Service Price</h2>
-        <div class="form-group">
-          <label for="modalName">Name<span>*</span></label>
-          <input type="text" id="modalName" name="modalName" required placeholder="Your Name">
-        </div>
-        <div class="form-group">
-          <label for="modalPhone">Mobile Number<span>*</span></label>
-          <input type="tel" id="modalPhone" name="modalPhone" required pattern="[0-9]{10,}" placeholder="Your Mobile Number">
-        </div>
-        <div class="form-group">
-          <label for="modalService">Service<span>*</span></label>
-          <textarea id="modalService" name="modalService" rows="2" required placeholder="Service"></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Submit</button>
-  </form>
-  <div id="modalSuccess" class="modal-success" style="display:none;">We will contact you very soon</div>
-      </form>
-    </div>
+<!-- Price Modal -->
+<div id="priceModal" class="modal-overlay">
+  <div class="modal-content">
+    <button class="modal-close" id="closeModal">&times;</button>
+    <form id="priceForm" class="modal-form">
+      <h2>Get Service Price</h2>
+      <div class="form-group">
+        <label for="modalName">Name<span>*</span></label>
+        <input type="text" id="modalName" name="modalName" required placeholder="Your Name">
+      </div>
+      <div class="form-group">
+        <label for="modalPhone">Mobile Number<span>*</span></label>
+        <input type="tel" id="modalPhone" name="modalPhone" required pattern="[0-9]{10,}"
+          placeholder="Your Mobile Number">
+      </div>
+      <div class="form-group">
+        <label for="modalService">Service<span>*</span></label>
+        <textarea id="modalService" name="modalService" rows="2" required placeholder="Service"></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+    <div id="modalSuccess" class="modal-success" style="display:none;">We will contact you very soon</div>
+    </form>
   </div>
+</div>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -98,7 +99,7 @@
         <button class="get-price-btn">Get Price</button>
       </div>
 
-        <div class="waxing-card">
+      <div class="waxing-card">
         <img src="hair smooth1.jpg" alt="Full Body Waxing">
         <h3>Hair Smoothening LOreal</h3>
         <button class="get-price-btn">Get Price</button>
@@ -127,7 +128,7 @@
         <img src="body waxing.jpg" alt="Body waxing">
         <span>Body Waxing</span>
       </a>
-  
+
       <a class="service-card" href="nail.html">
         <img src="nail-extension.jpg" alt="Hairstyling">
         <span>Nail Extension</span>
@@ -137,7 +138,7 @@
 
 
   <!-- Footer -->
-    <footer>
+  <footer>
     <p>📍 The Evolvers Library,Saidpur Street no-2,Bhikhana Pahadi More, Pin-800004</p>
     <p>📞 Contact: 7667798012 | 8797537533</p>
     <p>
@@ -147,8 +148,33 @@
     </p>
     <p>&copy; 2025 Indian Bridal Makeup & Hair. All Rights Reserved.</p>
   </footer>
+  <script>
+    document.getElementById('priceForm').addEventListener('submit', function (e) {
+      e.preventDefault();
 
+      fetch('https://sheetdb.io/api/v1/d2wso3a42dnwt', {
+        method: 'POST',
+        body: JSON.stringify({
+          data: {
+            name: document.getElementById('modalName').value,
+            phone: document.getElementById('modalPhone').value,
+            service: document.getElementById('modalService').value,
+            timestamp: new Date().toLocaleString(),
+          }
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('priceForm').style.display = 'none';
+          document.getElementById('modalSuccess').style.display = 'block';
+        })
+        .catch(err => alert('❌ There was an error: ' + err));
+    });
 
+  </script>
   <script src="script.js"></script>
 </body>
 
